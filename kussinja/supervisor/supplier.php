@@ -45,7 +45,7 @@
                           <th>Contacto </th>
                           <th>Email</th>
                           <th>Endereço</th>
-                          <th>Remédio(os)</th>
+                          <th>Produto(os)</th>
                           <th>Acção</th>
                         </tr>
                       </thead>

@@ -20,7 +20,7 @@
                 <h3>Geral</h3>
                 <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-tachometer"></i> Painel</a></li>
-                <li><a href="sales.php"><i class="fa fa-desktop"></i> Vendas</a></li>
+                <li><a href="add_carrinho.php"><i class="fa fa-desktop"></i> Vendas</a></li>
                 <li><a href="daily-sales.php"><i class="fa fa-shopping-cart"></i> Vendas Diárias</a></li>
                 <li><a href="profile.php"><i class="fa fa-user"></i> Perfil</a></li>
                 </ul>

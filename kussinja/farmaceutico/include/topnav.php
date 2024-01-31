@@ -13,8 +13,7 @@
                     <img src="images/picture.jpg" alt=""><?php echo $nome;?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"><i class="fa fa-user pull-right"></i> Perfil</a>
-                    <a class="dropdown-item"  href="javascript:;"><i class="fa fa-cog pull-right"></i> Configuração</a>
+                    <a class="dropdown-item"  href="profile.php"><i class="fa fa-user pull-right"></i> Perfil</a>
                     <a class="dropdown-item"  href="../sair.php"><i class="fa fa-sign-out pull-right"></i> Sair</a>
                   </div>
                 </li>

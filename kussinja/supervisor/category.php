@@ -15,7 +15,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3><i class="fa fa-medkit"></i> Categoria Remédios</h3>
+                <h3><i class="fa fa-medkit"></i> Categoria Produto</h3>
               </div>
             </div>
 
@@ -31,7 +31,7 @@
               <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de Categoria de Remédios</h2>
+                    <h2>Lista de Categoria de Produto</h2>
                     <ul class="nav navbar-right panel_toolbox">
                     <a href="#addCategoria" class="btn btn-sm btn-info text-white" data-toggle="modal"><i class="fa fa-plus"></i> Add Categoria</a>
                     </ul>

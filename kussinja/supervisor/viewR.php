@@ -17,7 +17,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3><i class="fa fa-list"></i> Editar Remédio</h3>
+                <h3><i class="fa fa-list"></i> Editar Produto</h3>
               </div>
             </div>
 
@@ -27,7 +27,7 @@
               <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Informação Remédio </h2>
+                    <h2>Informação do Produto </h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">

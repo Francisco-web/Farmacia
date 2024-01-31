@@ -17,7 +17,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3><i class="fa fa-list"></i> Editar Remédio</h3>
+                <h3><i class="fa fa-list"></i> Editar Produto</h3>
               </div>
             </div>
 
@@ -32,7 +32,7 @@
               <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Informação Remédio </h2>
+                    <h2>Informação Produto</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -79,7 +79,7 @@
                       <br><br><br>
                       <div class="col-md-8 col-sm-8">
                         <select name="idlocal" class="form-control">
-                          <option value="">Local de Remédio</option>
+                          <option value="">Local de Produto</option>
                           <?php
                             $sql = "SELECT id_local,nome_local FROM local_estoque ORDER BY nome_local";
                             $query = mysqli_query($conexao,$sql);

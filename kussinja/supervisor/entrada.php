@@ -15,7 +15,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3><i class="fa fa-medkit"></i> Entrada de Remédio</h3>
+                <h3><i class="fa fa-medkit"></i> Entrada de Produto</h3>
               </div>
             </div>
 
@@ -28,24 +28,25 @@
               <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de Remédios</h2>
+                    <h2>Lista de Produtos Registrados</h2>
                     <ul class="nav navbar-right panel_toolbox">
                     <a href="add-entrada.php" class="btn btn-sm btn-info text-white"><i class="fa fa-plus"></i> Add Entrada</a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                    <table id="" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th>Remédio</th>
+                          <th>Produto</th>
                           <th>Preço Compra</th>
-                          <th>Preço Unitário</th>
-                          <th>Estoque Inicial</th>
-                          <th>Estoque Actual</th>
+                          <th>Preço Unit.</th>
+                          <th>Estq. Inicial</th>
+                          <th>Estq. Actual</th>
                           <th>% Estoque</th>
                           <th>Estado</th>
                           <th>Receita</th>
+                          <th>Lucro</th>
                           <th>Acção</th>
                         </tr>
                       </thead>
@@ -62,10 +63,10 @@
                         $qtd_inical = $dados['qtd_inicial'];
                         $qtd_movida = $dados['qtd_movida']; 
                         $estado_entrada = $dados['estado_entrada'];
-                        $percentagem_estoque = $qtd_movida / 100 * 100 ;
-                        $despesa = $preco_compra * $qtd_inical; 
+                        $percentagem_estoque = $qtd_movida * 0.1 ;
                         $receita = $preco_venda * $qtd_inical;
-                      ?>
+                        $lucro = $receita / 2 ; 
+                        ?>
                       <tbody>
                         <tr>
                           <td><?php echo $remedio;?></td>
@@ -73,9 +74,10 @@
                           <td><?php echo $preco_venda;?></td>
                           <td><?php echo $qtd_inical;?></td>
                           <td><?php echo $qtd_movida;?></td>
-                          <td><?php echo "$percentagem_estoque%"?></td>
-                          <td><?php $estado_entrada; if($estado_entrada == 'Estoque Confortável'){echo"<span class='btn btn-sm btn-success text-white'>$estado_entrada</span>";}elseif($estado_entrada == 'Estoque Baixo'){echo"<span class='btn btn-sm btn-warning text-white'>$estado_entrada</span>";}elseif($estado_entrada == 'Sem Estoque'){echo"<span class='btn btn-sm btn-danger text-white'>$estado_entrada</span>";}?></td>
+                          <td><?php echo $percentagem_estoque >= 100 ? "100%":"$percentagem_estoque%"; ?></td>
+                          <td><?php $estado_entrada; if($estado_entrada == 'Estoque Confortável'){echo"<span class='text-success'>$estado_entrada</span>";}elseif($estado_entrada == 'Estoque Baixo'){echo"<span class='btn btn-sm btn-warning text-white'>$estado_entrada</span>";}elseif($estado_entrada == 'Sem Estoque'){echo"<span class='btn btn-sm btn-danger text-white'>$estado_entrada</span>";}?></td>
                           <td><?php echo number_format($receita,2,",",".");?></td>
+                          <td><?php echo number_format($lucro,2,",",".");?></td>
                           <td>
                               <a href="" class="btn btn-sm btn-info text-white"><i class="fa fa-eye"></i> </a>
                               <a class="btn btn-sm btn-success text-white"><i class="fa fa-edit"></i> </a>

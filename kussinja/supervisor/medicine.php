@@ -31,18 +31,18 @@
               <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lista de Remédios</h2>
+                    <h2>Lista de Produtos Registrados</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                    <a href="#addRemedio" data-toggle="modal" class="btn btn-sm btn-info text-white"><i class="fa fa-plus"></i> Add Remédio</a>
+                    <a href="#addRemedio" data-toggle="modal" class="btn btn-sm btn-info text-white"><i class="fa fa-plus"></i> Add Produto</a>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                    <table id="" class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
                           <th>Imagem</th>
-                          <th>Remédio</th>
+                          <th>Produto</th>
                           <th>Un.</th>
                           <th>Descrição</th>
                           <th>Categoria</th>
@@ -67,7 +67,7 @@
 
                       <tbody>
                         <tr>
-                          <td><img src="images/uploads/remedios/<?php echo "$imagem";?>" width="50" style="border-radius:10px" alt="Leite Nan"></td>
+                          <td><img src="../imagens/uploads/remedios/<?php echo "$imagem";?>" width="50" style="border-radius:10px" alt="Leite Nan"></td>
                           <td><?php echo $nome;?></td>
                           <td><?php echo $unidade;?></td>
                           <td><?php echo $descricao;?></td>

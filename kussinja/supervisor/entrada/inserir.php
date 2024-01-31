@@ -12,7 +12,9 @@ $percentagemLucro = mysqli_escape_string($conexao,$_POST['percentagemLucro']);
 $qtd_movida = $qtd_inicial;
 $data_entrada = date('Y-m-d');
 $id_nivel_acesso = 1;
-$preco_venda = $percentagemLucro + $preco_compra;
+//calculo do lucro
+$margem_lucro= $percentagemLucro/100;
+$preco_venda = $preco_compra/$margem_lucro ;
 
     if(empty($remedio)){
         $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'> Atenção: Seleciona o Remédio!</div>";
@@ -43,12 +45,12 @@ $preco_venda = $percentagemLucro + $preco_compra;
                 $estado_entrada = 'Sem Estoque'; 
             }
             $sql = "INSERT INTO entradas (id_entrada,id_remedio,id_nivel_acesso,qtd_inicial,qtd_movida,preco_compra,preco_venda,margemLucro,estado_entrada,vancimento,data_entrada)
-                    VALUES(NULL,'$remedio','$id_nivel_acesso','$qtd_inicial','$qtd_movida','$preco_compra','$preco_venda','$percentagemLucro','$estado_entrada','$data_expirar','$data_entrada')";
+                    VALUES(NULL,'$remedio','$id_nivel_acesso','$qtd_inicial','$qtd_movida','$preco_compra','$preco_venda','$margem_lucro','$estado_entrada','$data_expirar','$data_entrada')";
             if(mysqli_query($conexao,$sql)){
-                $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Entrada de Remédio Efectuda com Sucesso!</div>";
+                $_SESSION['msg'] = "<div class='alert alert-success' role='alert'>Entrada de Produto Efectuda com Sucesso!</div>";
                 header("location:../add-entrada.php");
             }else{
-                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'> Erro: Entrada de Remédio não Efectuado!</div>";
+                $_SESSION['msg'] = "<div class='alert alert-danger' role='alert'> Erro: Entrada de Produto não Efectuado!</div>";
                 header("location:../add-entrada.php");
             }
         }

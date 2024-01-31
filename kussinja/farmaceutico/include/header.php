@@ -1,18 +1,23 @@
-<?php /*include_once '../conexao.php';
+
+<?php 
+ob_start();
+session_start();
+include_once '../conexao.php';
 //Daos do funcionario preenchido na pagina perfil e outras
-$sql = "SELECT f.nome,f.endereco,f.email,f.telefone,u.nivel,u.senha FROM usuarios u join funcionarios f WHERE u.nome = f.nome; ";
+$sql = "SELECT id_nivel_acesso,nome_usuario,nivel.email,nivel.telefone,nivel.nivel,nivel.senha FROM nivel_acesso
+nivel inner join usuarios usu on nivel.id_usuario = usu.id_usuario WHERE nivel= 'Farmacêutico(a)' ";
 $query = mysqli_query($conexao,$sql);
-$dados = mysqli_fetch_assoc($query); 
-  $nome = $dados['nome'];
-  $endereco = $dados['endereco']; 
+$dados = mysqli_fetch_assoc($query);
+  $idFarmaceutico = $dados['id_nivel_acesso'];
+  $nome = $dados['nome_usuario'];
   $email = $dados['email']; 
   $telefone = $dados['telefone']; 
   $cargo = $dados['nivel'];
   $senha = $dados['senha']; 
 
   //data de hoje
-  $hoje = date("d/m/Y");
-*/?>
+  $hoje = date("Y-m-d");
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->

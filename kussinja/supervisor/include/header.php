@@ -3,6 +3,8 @@
 include_once '../conexao.php';
 session_start();
 
+//data de hoje
+$hoje = date("Y-m-d");
 ?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

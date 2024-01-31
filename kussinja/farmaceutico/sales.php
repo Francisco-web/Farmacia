@@ -64,6 +64,7 @@
                   </div>
                   </form>
                     </div>
+                    <form action="carrinho.php" method="POST">
                     <div class="col-md-12 col-sm-12 ">
                     <table class="table table-bordered" style="width:100%">
                       <thead>
@@ -71,9 +72,6 @@
                           <th>#</th>
                           <th>Remédio</th>
                           <th>Quantidade</th>
-                          <th>Preço <span class="required">(Kz)</span></th>
-                          <th>Tipo Desconto</th>
-                          <th>Desconto</th>
                           <th>Total</th>
                         </tr>
                       </thead>
@@ -81,23 +79,22 @@
                         <tr>
                           <td>1</td>
                           <td>
-                          <select name="remedio" class="form-control">
+                          <select id="remedio" name="id_entrada" class="form-control">
                             <option>Nenhum</option>
-                            <option>Medicine one</option>
-                            <option>Medicine two</option>
-                            <option>Medicine three</option>
-                            <option>Medicine four</option>
+                            <?php
+                              $sql ="SELECT ed.id_entrada,rem.remedio,rem.imagem,rem.unidade,rem.descricao,ed.qtd_inicial,ed.qtd_movida,ed.estado_entrada,ed.preco_compra,ed.preco_venda FROM entradas ed inner join remedios rem on ed.id_remedio = rem.id_remedio ORDER BY remedio";
+                              $query = mysqli_query($conexao,$sql);
+                              while($dados = mysqli_fetch_array($query)):
+                              $id_entrada = $dados['id_entrada']; 
+                              $remedio = $dados['remedio']; 
+                            ?>
+                            <option value="<?php echo $id_entrada?>"><?php echo $remedio?></option>
+                            <?php endwhile;?>
                           </select>
                         </td>
-                          <td><input type="text" required="required" class="form-control" name="qtd" placeholder="Insira Qtd"></td>
-                          <td><input type="text" required="required" class="form-control" name="precoUnit" placeholder="Preço Unit"></td>
-                          <td>
-                          <select name="tipoDesconto" class="form-control">
-                            <option>Nenhum</option>
-                            <option>fixed</option>
-                          </select></td>
-                          <td><input type="text" required="required" class="form-control" name="valorDesconto" placeholder="Preço Desconto"></td>
-                          <td><input type="text" required="required" class="form-control" name="qtdTotal" placeholder="0.00" readonly></td>
+                          <td><input type="text" required="required" class="form-control" name="qtd" placeholder="Insira Qtd" id="qtd" onchange="calcular()"></td>
+                          
+                          <td><input type="text" required="required" class="form-control" id="valorTotal" name="valorTotal" placeholder="0.00" readonly></td>
                         </tr>
                       </tbody>
                     </table>
@@ -105,41 +102,19 @@
                     <a href="#" name="apagar" class="btn btn-sm btn-danger text-white"><i class="fa fa-trash"></i> apagar</a>
                     </ul>
                     <ul class="nav navbar-left panel_toolbox">
-                    <a href="#" name="addMais" class="btn btn-sm btn-success text-white"><i class="fa fa-plus"></i> Add Mais</a>
+                    <button name="addMais" class="btn btn-sm btn-success text-white"><i class="fa fa-plus"></i> Add Mais</button>
                     </ul><br><br><br>
                     </div>
+                    </form>
                     <div class="col-md-3 col-sm-3  profile_left">
                     </div>
                     <div class="col-md-9 col-sm-9  profile_left">
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
-                      
                   <div class="item form-group">
                     <label class="col-form-label col-md-3 col-sm-3 label-align" >Sub Total <span class="required">(Kz)</span>
                     </label>
                     <div class="col-md-8 col-sm-8 ">
                       <input type="text" required="required" class="form-control" name="subTotal"  readonly placeholder="0.00">
-                      <span class="required">*Sem IVA</span>
-                    </div>
-                  </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" >Desconto <span class="required">(Kz)</span>
-                    </label>
-                    <div class="col-md-8 col-sm-8 ">
-                      <input type="text" required="required" class="form-control" name="totalDesconto" placeholder="0.00" readonly style="border:none">
-                    </div>
-                  </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" >Iva <span class="required">(Kz)</span>
-                    </label>
-                    <div class="col-md-8 col-sm-8 ">
-                      <input type="text" required="required" class="form-control" name="valorIva" placeholder="0.00">
-                    </div>
-                  </div>
-                  <div class="item form-group">
-                    <label class="col-form-label col-md-3 col-sm-3 label-align" >Total Iva<span class="required">(Kz)</span>
-                    </label>
-                    <div class="col-md-8 col-sm-8 ">
-                      <input type="text" required="required" class="form-control" name="totalIva" placeholder="0.00" readonly style="border:none">
                     </div>
                   </div>
                   <div class="item form-group">
@@ -166,5 +141,13 @@
     </div>
 
     <?php include 'include/footer.php';?>
+    <script>
+      function calcular() {
+        var qtd = document.getElementById('qtd');
+        var preco = document.getElementById('preco').value;
+       console.log(qtd_remedio);
+
+      }
+    </script>
   </body>
 </html>

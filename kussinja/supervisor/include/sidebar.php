@@ -20,9 +20,9 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                 <li><a href="index.php"><i class="fa fa-tachometer"></i> Painel</a></li>
-                <li><a href="category.php"><i class="fa fa-list"></i> Categoria Remédios</a></li>
-                <li><a href="local.php"><i class="fa fa-map"></i> Local Remédios</a></li>
-                <li><a href="medicine.php"><i class="fa fa-medkit"></i> Remédios</a></li>
+                <li><a href="category.php"><i class="fa fa-list"></i> Categoria Produto</a></li>
+                <li><a href="local.php"><i class="fa fa-map"></i> Local Produto</a></li>
+                <li><a href="medicine.php"><i class="fa fa-medkit"></i> Produtos</a></li>
                 <li><a href="entrada.php"><i class="fa fa-check"></i> Entradas</a></li>
                 <li><a href="sales.php"><i class="fa fa-money"></i> Vendas</a></li>
                 <li><a href="caixa.php"><i class="fa fa-desktop"></i> Caixa</a></li>

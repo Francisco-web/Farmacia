@@ -23,5 +23,5 @@
     <!-- Chart.js -->
     <script src="../vendors/Chart.js/Chart.min.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <script src="../build/js/dashboard.min.js"></script>
 	

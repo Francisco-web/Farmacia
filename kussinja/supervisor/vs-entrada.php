@@ -15,7 +15,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h4><i class="fa fa-medkit"></i>Entrada de Remédio</h3>
+                <h4><i class="fa fa-medkit"></i>Entrada de Produto</h3>
               </div>
             </div>
 
@@ -37,7 +37,7 @@
                   <div class="row">
                   <div class="col-md-4 col-sm-4">
                     <select name="remedio" class="form-control">
-                    <option>Remédio</option>
+                    <option>Produto</option>
                       <?php 
                       $sql = "SELECT id_remedio,remedio FROM remedios Order By remedio";
                       $query = mysqli_query($conexao,$sql);

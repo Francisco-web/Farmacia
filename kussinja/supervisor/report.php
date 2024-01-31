@@ -15,7 +15,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3><i class="fa fa-bar-chart"></i> Relatório de Vendas</h3>
+                <h3><i class="fa fa-bar-chart"></i> Relatório </h3>
               </div>
             </div>
 
